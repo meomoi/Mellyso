@@ -21,7 +21,7 @@ const store = new Store({
 	configName: 'config',
 	defaults: {
 		enctitlekeysBinRemoteUrl: "",
-		baseDirectory: path.join(app.getPath('home'), 'Villain3DS'),
+		baseDirectory: path.join(process.cwd(), 'user/Storage'),
 		region: "all"
 	}
 });
