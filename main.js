@@ -10,6 +10,7 @@ var fs = require('fs');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+app.setPath ('userData', path.join(process.cwd(), 'user/Settings'));
 
 function isDev() {
   return process.mainModule.filename.indexOf('app.asar') === -1;
@@ -88,7 +89,7 @@ function createWindow () {
 	  icon: __dirname + '/img/icon.png',
 	  backgroundColor: '#2b3e50'
 	})
-
+  mainWindow.setMenu(null);
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
